@@ -1,0 +1,30 @@
+liste = []
+def flatten(lst):
+    global liste
+    
+    if len(lst)==1 and type(lst[0]) != type([]):
+        
+        liste.append(lst[0])
+        
+    elif len(lst)==1 and type(lst[0]) == type([]):
+        
+        return flatten(lst[0])
+    
+    else:
+        
+        
+        
+        if type(lst[0]) != type([]):
+            
+            liste.append(lst[0])
+            return flatten(lst[1:])
+    
+        else:
+            
+            
+            
+            return flatten(lst[0]) and flatten(lst[1:])
+        
+   
+    return liste
+ 
